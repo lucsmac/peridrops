@@ -94,23 +94,28 @@ export default {
     cursor: none;
     z-index: 20;
 
-    @include max('phone') {
+    @include max('tablet') {
       flex-direction: column;
     }
 
     .mobile-warning {
-      align-self: flex-start;
+      display: none;
+      align-self: center;
       padding-bottom: 60px;
       font-size: .7rem;
       font-family: 'Roboto', sans-serif;
       color: #FFF;
       text-align: center;
+
+      @include max('tablet') {
+        display: block;
+      }
     }
 
     .hover-this {
       transition: all 0.3s ease;
 
-      @include max('phone') {
+      @include max('tablet') {
         margin: 20px 0;
       }
 

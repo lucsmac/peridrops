@@ -153,6 +153,11 @@ export default {
         width: 110vw;
         overflow: visible;
         height: 100%;
+
+        @include max('tablet-wide') {
+          width: 125vw;
+        }
+
         @include max('phone') {
           width: 150vw;
         }

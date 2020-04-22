@@ -33,7 +33,7 @@ export default {
   padding: 0 1vw;
   transform: translate3d(0, -50%, 0);
 
-  @include max('phone') {
+  @include max('phablet') {
     top: 0;
     right: 0;
     transform: translate3d(0, 0, 0);
@@ -55,7 +55,7 @@ export default {
     transition: all .5s ease;
     z-index: 500;
 
-    @include max('phone') {
+    @include max('phablet') {
       writing-mode: initial;
       text-orientation: initial;
       font-size: 1.5rem;

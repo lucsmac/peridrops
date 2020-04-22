@@ -23,6 +23,10 @@ export default {
   overflow: hidden;
   position: relative;
 
+  @include max('tablet') {
+    height: 300px;
+  }
+
   @include max('phone') {
     height: 200px;
     flex-direction: column;

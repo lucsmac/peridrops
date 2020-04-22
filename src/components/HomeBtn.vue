@@ -24,7 +24,7 @@ export default {
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
 
-  @include max('phone') {
+  @include max('phablet') {
     padding-top: 15px;
   }
 }

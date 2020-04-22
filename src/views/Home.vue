@@ -49,6 +49,10 @@ export default {
   padding: 15vh 15vw;
   width: 100%;
 
+  @include max('tablet') {
+    padding: 75px 10vw;
+  }
+
   @include max('phone') {
     padding: 75px 5vw;
   }
@@ -60,6 +64,10 @@ export default {
     line-height: 1;
     padding-bottom: 10px;
     transform: translate3d(0, 7.5px, 0);
+
+    @include max('tablet') {
+      font-size: 5rem;
+    }
 
     @include max('phone') {
       font-size: 3rem;
