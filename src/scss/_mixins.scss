@@ -1,0 +1,85 @@
+
+// sombras
+
+@mixin shadow {
+    box-shadow: -5px 5px 15px 0px rgba(44, 44, 44, .75);
+}
+
+// media queries
+
+// ==== breakpoints relevantes
+
+$breakpoints: (
+    "phone-small":  320px,
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       770px,
+    "tablet-wide":  1030px,
+    "desktop":      1300px,
+    "desktop-wide": 1440px
+);
+
+// ==== media query min-width
+
+@mixin min($width) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @media only screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+
+// ==== media query max-width
+
+@mixin max($width) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        $width: $width - 1px;
+        @media only screen and (max-width: $width) {
+            @content;
+        }
+    }
+}
+
+// centralizar
+
+@mixin center {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+// tipografia
+@mixin type-1 {
+    font-family: "Fjalla One", sans-serif;
+}
+
+@mixin p-type($size: false, $lh: false, $weight: false, $color: false) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @if $size == "small" {
+        font-size: .8rem;
+    } @else if $size == "normal" {
+        font-size: 1rem;
+    } @else if $size == "mid" {
+        font-size: 1.5rem;
+    } @else if $size == "big" {
+        font-size: 3.75rem;
+    } @else if $size == "giant" {
+        font-size: 5rem;
+    } @else {
+        font-size: $size;
+    };
+    @if $color { color: $color };
+    @if $weight == "reg" { 
+        font-weight: 300;
+    } @else if $weight == "semibold" {
+        font-weight: 500;
+    } @else if $weight == "bold" {
+        font-weight: 900;
+    }
+    @if lh { line-height: $lh };
+}

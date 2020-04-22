@@ -1,32 +1,55 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="content-view">
+      <router-view class="view"/>
     </div>
-    <router-view/>
+    <Footer />
   </div>
 </template>
 
+<script>
+import Footer from './components/Footer.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Footer,
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+@font-face{
+    font-family:"Hey August";
+    src:url("./assets/fonts/hey-august.ttf") format("ttf");
 }
 
-#nav {
-  padding: 30px;
+@font-face{
+    font-family:"Gobold";
+    src:url("./assets/fonts/Gobold-Bold.otf") format("otf");
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.content-view {
+    width: 100%;
+    padding: 3.5vh 2vw;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    @include max('phone') {
+      padding: 0;
     }
+
+  .view {
+    @include shadow;
   }
+}
+
+#app {
+  background: #DEDEDE;
 }
 </style>
