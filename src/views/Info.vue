@@ -29,27 +29,27 @@ export default {
       infoAnimation: [
         {
           name: 'page-transition',
-          description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget malesuada metus. Sed volutpat aliquam maximus. Maecenas malesuada eleifend rutrum. Nulla laoreet eros sed lorem accumsan, sed tempus lectus pretium.', 'Curabitur in risus in arcu sollicitudin pellentesque ac id ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam rutrum vehicula dui, ac accumsan lacus porttitor fermentum.'],
+          description: ['Uma das melhores táticas para se ter um bom design na web é passar a sensação de unidade, com as transições entre páginas essa impressão é transmitida com muita elegância. A fluidez na navegação torna a usabilidade do seu site muito mais agradável e a experiência muito mais prazerosa.', 'Para construir essa transição me baseei em um exemplo que utilizava uma biblioteca auxiliar chamada Barbajs, porém, decidi adaptar ao meu próprio modo e utilizar os mecanismos de transição do Vue Router.'],
           tools: ['Greensock', 'SCSS', 'VueTransitions', 'VueRouter'],
-          codeLink: '#',
+          codeLink: 'https://github.com/lucsmac/peridrops/tree/master/src/views/PageTransition',
         },
         {
           name: 'showcase-draggable',
-          description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget malesuada metus. Sed volutpat aliquam maximus. Maecenas malesuada eleifend rutrum. Nulla laoreet eros sed lorem accumsan, sed tempus lectus pretium.', 'Curabitur in risus in arcu sollicitudin pellentesque ac id ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam rutrum vehicula dui, ac accumsan lacus porttitor fermentum.'],
+          description: ['Um ótimo exemplo de como um efeito simples de clicar e arrastar torna a experiência do seu usuário muito mais interessante. Essa estratégia pode ser aplicada em listas de fotos e projetos, como um portfólios e galerias.', 'Sua implementação é bem simples, utilizando apenas poucas linhas de JavaScript para configurar a biblioteca Panzoom, utilizada para permitir que a tela seja arrastável.'],
           tools: ['Panzoom', 'SCSS'],
-          codeLink: '#',
+          codeLink: 'https://github.com/lucsmac/peridrops/tree/master/src/views/ShowcaseDraggable',
         },
         {
           name: 'blend-cursor-hover',
-          description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget malesuada metus. Sed volutpat aliquam maximus. Maecenas malesuada eleifend rutrum. Nulla laoreet eros sed lorem accumsan, sed tempus lectus pretium.', 'Curabitur in risus in arcu sollicitudin pellentesque ac id ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam rutrum vehicula dui, ac accumsan lacus porttitor fermentum.'],
+          description: ['Fluidez é a palavra que define essa animação. Os efeitos presentes neste exemplo propoem a criação de uma unidade entre os elementos: o cursor conversa com os links, que por sua vez conversam com o cursor. Mais um exemplo de como a percepção do usuário sobre o site pode ser incrementada através de táticas simples.', 'Para construir um efeito como esse basta a manipulação do DOM através de JavaScript para alterar propriedades CSS de acordo com a interação do usuário com os elementos.'],
           tools: ['SCSS', 'JavaScript'],
-          codeLink: '#',
+          codeLink: 'https://github.com/lucsmac/peridrops/tree/master/src/views/BlendCursorHover',
         },
         {
           name: 'scroll-animation',
-          description: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget malesuada metus. Sed volutpat aliquam maximus. Maecenas malesuada eleifend rutrum. Nulla laoreet eros sed lorem accumsan, sed tempus lectus pretium.', 'Curabitur in risus in arcu sollicitudin pellentesque ac id ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam rutrum vehicula dui, ac accumsan lacus porttitor fermentum.'],
+          description: ['Uma grande tendência nos produtos web é a utilização do storytelling. Cada vez mais o design dos sites está sendo pensado para guiar as ações do usuário e inserí-lo em uma jornada. Esse exemplo mostra uma forma muito interessante de como o direcionamento do usuário pode acontecer. A utilização da página segue uma linha cronológica com início, meio e fim, evitando que o seu usuário fique perdido ou sem entender para onde ir ao acessar o site.', 'Para criar esse exemplo foi utilizado uma biblioteca chamada ScrollMagic, porém, é preciso informar que a ScrollMagic é uma biblioteca que possui problemas de manutenção, portanto deixo a indicação para utilizar uma outra ferramenta ou criar a sua própria.'],
           tools: ['ScrollMagic', 'Greensock', 'Sass', 'JavaScript'],
-          codeLink: '#',
+          codeLink: 'https://github.com/lucsmac/peridrops/tree/master/src/views/ScrollAnimation',
         },
       ],
     };
@@ -132,7 +132,12 @@ export default {
   }
 
   .content-paragraph {
+    opacity: .9;
     font-family: 'Roboto', sans-serif;
+
+    & + .content-paragraph {
+      padding-top: 7px;
+    }
   }
 
   .tools {
