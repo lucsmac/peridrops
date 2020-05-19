@@ -13,7 +13,10 @@
 </template>
 
 <script>
-import { TimelineLite } from 'gsap';
+import { gsap, TimelineLite } from 'gsap';
+import { CSSPlugin } from 'gsap/CSSPlugin';
+
+gsap.registerPlugin(CSSPlugin);
 
 export default {
   methods: {
